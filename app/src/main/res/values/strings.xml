@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProyectoExamen</string>
+    <string name="but_agregar">Agregar Trabajador</string>
+    <string name="but_borrar">Borrar Todo</string>
 </resources>
