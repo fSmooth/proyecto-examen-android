@@ -56,7 +56,7 @@ public class AdapterTrabajadores extends BaseAdapter{
 
         vh.id.setText(String.valueOf(current.getId()));
         vh.nombre.setText(current.getNombre());
-        vh.apellido.setText(current.getApellido());
+        vh.apellido.setText(current.getApellidos());
         vh.edad.setText(String.valueOf(current.getEdad()));
 
         return convertView;

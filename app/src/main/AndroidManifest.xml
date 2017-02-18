@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AgregarTrabajador" />
-        <activity android:name=".AgregarFormacion"></activity>
+        <activity android:name=".AgregarFormacion" />
+        <activity android:name=".InfoTrabajador"></activity>
     </application>
 
 </manifest>

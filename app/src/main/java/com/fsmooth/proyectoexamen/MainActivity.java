@@ -83,6 +83,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listViewTrabajadores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
+
+                bundle.putString("id_trab", String.valueOf(trabajadoresList.get(position).getId()));
+                bundle.putString("nombre", trabajadoresList.get(position).getNombre());
+                bundle.putString("apellidos", trabajadoresList.get(position).getApellidos());
+                bundle.putString("edad", String.valueOf(trabajadoresList.get(position).getEdad()));
+
+                Intent i = new Intent(MainActivity.this, InfoTrabajador.class);
+                i.putExtras(bundle);
+
+                startActivity(i);
+                finish();
+
+            }
+        });
+
 
 
 
