@@ -59,9 +59,6 @@ public class AdapterTrabajadores extends BaseAdapter{
         vh.apellido.setText(currentCar.getApellido());
         vh.edad.setText(currentCar.getEdad());
 
-
-
-
         return convertView;
     }
 
