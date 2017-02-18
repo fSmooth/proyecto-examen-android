@@ -56,7 +56,7 @@ public class InfoTrabajador extends AppCompatActivity {
         listViewCursos = (ListView) findViewById(R.id.listViewCursos);
         cursosList = new ArrayList<>();
 
-        textInfo.append(idTrabajador);
+        textInfo.append(" " + idTrabajador);
         textNombre.append(nombreTrabajador);
         textApellidos.append(apellidosTrabajador);
         textEdad.append(edadTrabajador);
