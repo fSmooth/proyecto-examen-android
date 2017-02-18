@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
     // Sentencias SQL para crear las tablas Trabajadores y Formacion
-    String sqlTrabajadores = "CREATE TABLE Trabajadores (id_trab INTEGER PRIMARY KEY NOT NULL, " +
-                                                            "apellidos TEXT, edad INTEGER)";
+    String sqlTrabajadores = "CREATE TABLE Trabajadores (id_trab INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "nombre TEXT, apellidos TEXT, edad INTEGER)";
     String sqlFormacion = "CREATE TABLE Formacion (id_form INTEGER PRIMARY KEY NOT NULL, " +
-                                                    "id_trab FOREIGN KEY NOT NULL, " +
-                                                    "nombre_curso TEXT, duracion INTEGER)";
+            "id_trab FOREIGN KEY NOT NULL, " +
+            "nombre_curso TEXT, duracion INTEGER)";
 
     public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

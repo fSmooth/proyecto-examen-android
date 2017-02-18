@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">ProyectoExamen</string>
+
+    <!-- MainActivity-->
     <string name="but_agregar">Agregar Trabajador</string>
     <string name="but_borrar">Borrar Todo</string>
+
+    <!-- AgregarTrabajador -->
+    <string name="edit_nombre">Nombre</string>
+    <string name="edit_apellidos">Apellidos</string>
+    <string name="edit_edad">Edad</string>
+    <string name="but_guardar">Guardar</string>
+    <string name="but_salir">Salir</string>
 </resources>
