@@ -21,13 +21,13 @@
 
 
         <Button
-            android:id="@+id/buttonAgregar"
+            android:id="@+id/butAgregar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/but_agregar" />
 
         <Button
-            android:id="@+id/buttonBorrar"
+            android:id="@+id/butBorrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/but_borrar" />

@@ -11,4 +11,8 @@
     <string name="edit_edad">Edad</string>
     <string name="but_guardar">Guardar</string>
     <string name="but_salir">Salir</string>
+
+    <!-- AgregarFormacion -->
+    <string name="edit_curso">Nombre del curso</string>
+    <string name="edit_duracion">Duración</string>
 </resources>

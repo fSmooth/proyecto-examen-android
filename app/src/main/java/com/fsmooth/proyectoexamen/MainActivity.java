@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -33,15 +34,22 @@ public class MainActivity extends AppCompatActivity {
         listViewTrabajadores = (ListView) findViewById(R.id.listView);
         trabajadoresList = new ArrayList<Trabajadores>();
 
-        btnAgregar = (Button) findViewById(R.id.buttonAgregar);
-        btnBorrar = (Button) findViewById(R.id.buttonBorrar);
+        btnAgregar = (Button) findViewById(R.id.butAgregar);
+        btnBorrar = (Button) findViewById(R.id.butBorrar);
 
+        helper = new SQLiteHelper(this, "DBTrabajadores", null, 1);
+        db = helper.getWritableDatabase();
+
+        adapterTrabajadores = new AdapterTrabajadores(this, trabajadoresList, R.layout.item_trabajadores);
+        listViewTrabajadores.setAdapter(adapterTrabajadores);
+
+        update();
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AgregarTrabajador.class);
-                startActivity(intent);
+                Intent i = new Intent(MainActivity.this, AgregarTrabajador.class);
+                startActivity(i);
                 finish();
             }
         });
@@ -54,13 +62,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        helper = new SQLiteHelper(this, "DBTrabajadores", null, 1);
-        db = helper.getWritableDatabase();
 
-        adapterTrabajadores = new AdapterTrabajadores(this, trabajadoresList, R.layout.item_trabajadores);
-        listViewTrabajadores.setAdapter(adapterTrabajadores);
+        listViewTrabajadores.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-        update();
+                Bundle bundle = new Bundle();
+
+                bundle.putString("id_trab", String.valueOf(trabajadoresList.get(position).getId()));
+                bundle.putString("nombre", trabajadoresList.get(position).getNombre());
+
+                Intent i = new Intent(MainActivity.this, AgregarFormacion.class);
+                i.putExtras(bundle);
+
+                startActivity(i);
+                finish();
+
+                return false;
+
+            }
+        });
+
+
 
 
 

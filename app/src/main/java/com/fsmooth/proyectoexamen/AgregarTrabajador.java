@@ -15,11 +15,11 @@ public class AgregarTrabajador extends AppCompatActivity {
     private SQLiteHelper helper;
     private SQLiteDatabase db;
 
-    EditText editNombre;
-    EditText editApellidos;
-    EditText editEdad;
-    Button butGuadar;
-    Button butSalir;
+    private EditText editNombre;
+    private EditText editApellidos;
+    private EditText editEdad;
+    private Button butGuadar;
+    private Button butSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,8 @@ public class AgregarTrabajador extends AppCompatActivity {
         butSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AgregarTrabajador.this, MainActivity.class);
-                startActivity(intent);
+                Intent i = new Intent(AgregarTrabajador.this, MainActivity.class);
+                startActivity(i);
                 finish();
             }
         });
@@ -70,8 +70,8 @@ public class AgregarTrabajador extends AppCompatActivity {
 
             db.insert("Trabajadores", null, nuevoRegistro);
 
-            Intent intent = new Intent(AgregarTrabajador.this, MainActivity.class);
-            startActivity(intent);
+            Intent i = new Intent(AgregarTrabajador.this, MainActivity.class);
+            startActivity(i);
             finish();
         }
 
