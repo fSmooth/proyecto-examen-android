@@ -52,17 +52,17 @@ public class AdapterTrabajadores extends BaseAdapter{
             vh = (ViewHolder) convertView.getTag();
         }
 
-        Trabajadores currentCar = list.get(position);
+        Trabajadores current = list.get(position);
 
-        vh.id.setText(currentCar.getId() + "");
-        vh.nombre.setText(currentCar.getNombre());
-        vh.apellido.setText(currentCar.getApellido());
-        vh.edad.setText(currentCar.getEdad());
+        vh.id.setText(String.valueOf(current.getId()));
+        vh.nombre.setText(current.getNombre());
+        vh.apellido.setText(current.getApellido());
+        vh.edad.setText(String.valueOf(current.getEdad()));
 
         return convertView;
     }
 
-    public class ViewHolder {
+    static class ViewHolder {
         TextView id;
         TextView nombre;
         TextView apellido;

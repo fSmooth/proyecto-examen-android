@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class AgregarTrabajador extends AppCompatActivity {
 
-    private SQLiteHelper sqLiteHelper;
+    private SQLiteHelper helper;
     private SQLiteDatabase db;
 
     EditText editNombre;
@@ -33,6 +33,8 @@ public class AgregarTrabajador extends AppCompatActivity {
         butGuadar = (Button) findViewById(R.id.butGuardar);
         butSalir = (Button) findViewById(R.id.butSalir);
 
+        helper = new SQLiteHelper(this, "DBTrabajadores", null, 1);
+        db = helper.getWritableDatabase();
 
         butGuadar.setOnClickListener(new View.OnClickListener() {
             @Override

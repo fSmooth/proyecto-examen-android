@@ -9,9 +9,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     // Sentencias SQL para crear las tablas Trabajadores y Formacion
     String sqlTrabajadores = "CREATE TABLE Trabajadores (id_trab INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             "nombre TEXT, apellidos TEXT, edad INTEGER)";
-    String sqlFormacion = "CREATE TABLE Formacion (id_form INTEGER PRIMARY KEY NOT NULL, " +
-            "id_trab FOREIGN KEY NOT NULL, " +
-            "nombre_curso TEXT, duracion INTEGER)";
+    String sqlFormacion = "CREATE TABLE Formacion (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, id_trab INTEGER NOT NULL, curso TEXT, duracion INTEGER)";
 
     public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
