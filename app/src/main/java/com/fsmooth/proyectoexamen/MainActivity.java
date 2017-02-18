@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, AgregarTrabajador.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtras(bundle);
 
                 startActivity(i);
-                finish();
 
                 return false;
 
@@ -97,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtras(bundle);
 
                 startActivity(i);
-                finish();
 
             }
         });

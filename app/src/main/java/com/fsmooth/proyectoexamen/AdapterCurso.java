@@ -1,5 +1,6 @@
 package com.fsmooth.proyectoexamen;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,18 +10,19 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterTrabajadores extends BaseAdapter{
+public class AdapterCurso extends BaseAdapter{
     // atributos
     private Context context;
-    private List<Trabajadores> list;
+    private List<Formacion> list;
     private int layout;
 
     // constructor
-    public AdapterTrabajadores(Context context, List<Trabajadores> list, int layout) {
+    public AdapterCurso(Context context, List<Formacion> list, int layout) {
         this.context = context;
         this.list = list;
         this.layout = layout;
     }
+
 
     @Override
     public int getCount() {
@@ -33,8 +35,8 @@ public class AdapterTrabajadores extends BaseAdapter{
     }
 
     @Override
-    public long getItemId(int id) {
-        return id;
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
@@ -43,29 +45,24 @@ public class AdapterTrabajadores extends BaseAdapter{
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(layout, null);
             vh = new ViewHolder();
-            vh.id = (TextView) convertView.findViewById(R.id.textViewId);
-            vh.nombre = (TextView) convertView.findViewById(R.id.textViewNombre);
-            vh.apellido = (TextView) convertView.findViewById(R.id.textViewApellido);
-            vh.edad = (TextView) convertView.findViewById(R.id.textViewEdad);
+            vh.curso = (TextView) convertView.findViewById(R.id.textCurso);
+            vh.duracion = (TextView) convertView.findViewById(R.id.textDuracion);
             convertView.setTag(vh);
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
 
-        Trabajadores current = list.get(position);
+        Formacion current = list.get(position);
 
-        vh.id.setText(String.valueOf(current.getId()));
-        vh.nombre.setText(current.getNombre());
-        vh.apellido.setText(current.getApellidos());
-        vh.edad.setText(String.valueOf(current.getEdad()));
+        vh.curso.setText(current.getCurso());
+        vh.duracion.setText(String.valueOf(current.getDuracion()));
 
         return convertView;
+
     }
 
     public class ViewHolder {
-        TextView id;
-        TextView nombre;
-        TextView apellido;
-        TextView edad;
+        TextView curso;
+        TextView duracion;
     }
 }

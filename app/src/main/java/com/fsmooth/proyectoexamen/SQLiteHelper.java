@@ -31,4 +31,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlTrabajadores);
         db.execSQL(sqlFormacion);
     }
+
+
 }
