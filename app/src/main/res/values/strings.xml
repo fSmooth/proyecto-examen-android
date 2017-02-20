@@ -28,4 +28,8 @@
     <string name="dialog_message">¿Desea borrar el curso?</string>
     <string name="dialog_positive_button">Si</string>
     <string name="dialog_negative_button">No</string>
+
+    <!-- Actionbar -->
+    <string name="info">Info.</string>
+    <string name="salir">Salir</string>
 </resources>
