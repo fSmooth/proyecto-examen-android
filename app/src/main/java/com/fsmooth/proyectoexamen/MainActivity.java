@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(i);
 
-                return false;
+                return true;
 
             }
         });

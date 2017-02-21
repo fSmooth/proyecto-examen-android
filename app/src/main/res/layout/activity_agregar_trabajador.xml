@@ -10,19 +10,19 @@
 
     <EditText
         android:id="@+id/editNombre"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="@string/edit_nombre" />
     <EditText
         android:id="@+id/editApellidos"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="@string/edit_apellidos"/>
     <EditText
         android:id="@+id/editEdad"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:hint="@string/edit_edad"/>
